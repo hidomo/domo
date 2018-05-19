@@ -1,0 +1,3 @@
+#!/bin/bash
+ export DOMO_CMD=imagemagick
+ domoRun montage "$@"

@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ -z "$(docker images -q domo/$1 2> /dev/null)" ]; then
+    docker build -t domo/$1 .
+fi

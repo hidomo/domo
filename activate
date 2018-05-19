@@ -1,0 +1,7 @@
+#!/bin/bash
+domoReadlink() {
+    python -c 'import os,sys;print(os.path.realpath(sys.argv[1]))' $1
+}
+
+export DOMO_ROOT=$(dirname $(domoReadlink "$0"))
+export PATH="${DOMO_ROOT}/bin:${PATH}"

@@ -1,0 +1,4 @@
+#!/bin/bash
+ export DOMO_RUN_ARGS="--device=/dev/net/tun --cap-add=NET_ADMIN -p 127.0.0.1:1080:1080"
+ export DOMO_CMD=openvpn2socks
+ domoRun "$@"

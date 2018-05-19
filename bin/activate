@@ -1,0 +1,8 @@
+#!/bin/bash
+if ! [ -z "${DOMO_INFO}" ]; then
+    echo "Workspace already activated"
+    exit 1
+fi
+export PATH="${DOMO_ROOT}/bin/workspace:${PATH}"
+export DOMO_INFO="(workspace) "
+/usr/local/bin/zsh

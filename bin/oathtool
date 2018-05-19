@@ -1,0 +1,3 @@
+#!/bin/bash
+export DOMO_CMD=oath-toolkit
+domoRun oathtool "$@"
