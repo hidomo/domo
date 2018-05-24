@@ -5,5 +5,5 @@ fi
 if [ -z  "${DOMO_RUN_ARGS}" ]; then
     DOMO_RUN_ARGS="--net=none"
 fi
-docker run --rm -i ${interactive} -v /Users:/Users -w `pwd` --env TERM=xterm-256color \
+eval docker run --rm -i ${interactive} -v /Users:/Users -w `pwd` --env TERM=xterm-256color \
     ${DOMO_RUN_ARGS} domo/${DOMO_CMD} "$@"
