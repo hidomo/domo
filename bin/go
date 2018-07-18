@@ -2,7 +2,7 @@
 export DOMO_CMD=golang
 for E in $(domoRun go env | awk -F "=" '{print $1}'); do
     if ! [ -z "${!E}" ]; then
-        DOMO_GO_ENV="--env ${E}='${!E}' ${DOMO_GO_ENV}"
+        DOMO_GO_ENV="--env ${E}=${!E} ${DOMO_GO_ENV}"
     fi
 done
 export DOMO_RUN_ARGS="${DOMO_GO_ENV}"
