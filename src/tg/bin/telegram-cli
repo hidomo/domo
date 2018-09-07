@@ -1,0 +1,4 @@
+#!/bin/bash
+export DOMO_RUN_ARGS="--net=host"
+export DOMO_CMD=tg
+domoExec /usr/bin/telegram-cli "-k" "/etc/telegram-cli/tg.pub" "$@"

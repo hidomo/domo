@@ -1,0 +1,4 @@
+#!/bin/bash
+ export DOMO_RUN_ARGS="--privileged --net=host"
+ export DOMO_CMD=workspace
+ domoExec gdb "$@"
