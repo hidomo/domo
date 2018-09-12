@@ -1,8 +1,10 @@
-FROM fedora:26
+FROM fedora:28
 
 RUN dnf install -y \
     which make libtool cmake clang \
     redhat-rpm-config gperftools-devel libatomic \
-    lldb gdb python2-pip \
+    dumb-init lldb gdb python2-pip \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-ENV CC=/usr/bin/clang CXX=/usr/bin/clang++
+ENV LANG=C.UTF-8 CC=/usr/bin/clang CXX=/usr/bin/clang++
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]

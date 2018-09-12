@@ -1,0 +1,3 @@
+#!/bin/bash
+export DOMO_CMD=clangd
+domoExec /usr/bin/clangd-8 "$@"

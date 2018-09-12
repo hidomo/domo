@@ -1,0 +1,6 @@
+deb http://mirrors.aliyun.com/debian stretch main
+deb http://mirrors.aliyun.com/debian stretch-updates main
+deb http://mirrors.aliyun.com/debian-security stretch/updates main
+
+deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch main
+deb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch main
