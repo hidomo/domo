@@ -2,7 +2,7 @@
 if [ -t 0 ]; then
     interactive="-t"
 fi
-if [ -z "$(docker ps | awk '{print $2}' | grep domo-${DOMO_CMD} 2> /dev/null)" ]; then
+if [ -z "$(docker ps | grep domo-${DOMO_CMD}$ 2> /dev/null)" ]; then
     export DOMO_RUN_ARGS="${DOMO_RUN_ARGS} -itd --name=domo-${DOMO_CMD}"
     domoRun sh -c 'while true; do sleep 86400; done'
 fi
