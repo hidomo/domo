@@ -9,3 +9,7 @@ if ! (which docker-compose > /dev/null); then
     curl -sL ${URL} > ./bin/docker-compose
     chmod +x ./bin/docker-compose
 fi
+
+docker volume create --driver local \
+  --opt type=nfs --opt o=addr=host.docker.internal,rw,nolock,hard,nointr,nfsvers=3 \
+  --opt device=":/Users" local
