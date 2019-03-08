@@ -1,4 +1,4 @@
 #!/bin/bash
- export DOMO_RUN_ARGS="--privileged --net=host"
+ export DOMO_RUN_ARGS="--privileged --net=host --tmpfs /Users/fancl20/Workspace/ai-interface/build:exec --tmpfs /Users/fancl20/Workspace/ai-kfc/build:exec --tmpfs /Users/fancl20/Workspace/ai-router/build:exec --tmpfs /Users/fancl20/Workspace/cpp-base/build:exec --tmpfs /Users/fancl20/Workspace/package/build:exec --tmpfs /Users/fancl20/Workspace/pegasus-data/build:exec --tmpfs /Users/fancl20/Workspace/pegasus-middleware/build:exec --tmpfs /Users/fancl20/Workspace/pegasus-vertical/build:exec --tmpfs /Users/fancl20/Workspace/pegasus/build:exec --tmpfs /Users/fancl20/Workspace/scripts/build:exec"
  export DOMO_CMD=workspace
  domoExec cmake "$@"

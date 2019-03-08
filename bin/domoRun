@@ -8,5 +8,5 @@ fi
 
 # echo nfs.server.mount.require_resv_port = 0 >> /etc/nfs.conf
 # echo /Users -alldirs -mapall=$(id -u):$(id -g) localhost >> /etc/exports
-docker run --rm -i ${interactive} -v local:/Users -w `pwd` --env TERM=xterm-256color \
+docker run --rm -i ${interactive} -v local:/Users -v local:/remote/Users -w `pwd` --env TERM=xterm-256color \
     ${DOMO_RUN_ARGS} domo/${DOMO_CMD} "$@"

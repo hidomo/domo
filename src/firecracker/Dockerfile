@@ -1,7 +1,12 @@
-FROM alpine:latest
+FROM golang:latest
 
 ADD build.sh /tmp
-RUN apk add --no-cache curl dumb-init && cd /usr/local/bin && \
-    /tmp/build.sh && rm /tmp/build.sh
+RUN cd /tmp && /tmp/build.sh && \
+    git clone https://github.com/firecracker-microvm/firectl && \
+    cd firectl && make && \
+    mv /tmp/firecracker /usr/local/bin/firecracker && \
+    mv /tmp/dumb-init /usr/local/bin/dumb-init && \
+    mv /tmp/firectl/firectl /usr/local/bin/firectl && \
+    rm -rf /tmp
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
